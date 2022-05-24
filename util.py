@@ -5,7 +5,7 @@ class node():
         self.end = False
         self.word = c
 
-class ac():
+class ac_auto():
     def __init__(self):
         self.root = node("root")
     def add(self,words):

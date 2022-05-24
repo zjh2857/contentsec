@@ -15,9 +15,7 @@ while True :
             "id":1}
     headers = {'Content-type': 'application/json'}
     response = session.post('http://172.23.144.1:8545', json=payload, headers=headers)
-    print(response.text)
     insts = response.json()["result"]["structLogs"]
-    
     label = set()
     for inst in insts:
         pc = inst['pc']
@@ -46,7 +44,7 @@ while True :
         ac = pickle.load(f)
         f.close()
     except:
+        print("aaa")
         ac = ac_auto()
-    ac.add(execlist)
-    f = open(to,"wb")
-    pickle.dump(ac,f)
+    ac.search(execlist)
+    
